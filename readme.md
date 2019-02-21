@@ -12,6 +12,7 @@ None
 ## Privacy Protection
 
 ✔️ Only the `id` of the node of the organization is reported
+
 ✔️ Database is not mounted (or read in any other way)
 
 ## Input.txt
@@ -40,5 +41,5 @@ docker build -t droundrobintest .
 
 To test/run the node-algorithm `my_turn` locally the folder `local` is included in the repository. The following command should run the algorithm.
 ```
-docker run -v .\local\my_turn\input.txt:/app/input.txt -v .\local\my_turn\token.txt:/app/token.txt -v .\local\my_turn\output.txt:/app/output.txt dsummary
+docker run -v .\local\my_turn\input.txt:/app/input.txt -v .\local\my_turn\token.txt:/app/token.txt -v .\local\my_turn\output.txt:/app/output.txt droundrobintest
 ```
