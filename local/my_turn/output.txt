@@ -1,1 +1,1 @@
-{"type": "container", "node_id": 10, "collaboration_id": 3, "task_id": 223, "image": "docker-registry.distributedlearning.ai/dsummary"}
+{"result": {"type": "container", "node_id": 10, "collaboration_id": 3, "task_id": 223, "image": "docker-registry.distributedlearning.ai/dsummary"}}
