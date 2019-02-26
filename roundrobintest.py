@@ -33,7 +33,8 @@ def master(token):
     # get all organizations (ids) that are within the collaboration
     # FlaskIO knows the collaboration to which the container belongs
     # as this is encoded in the JWT (Bearer token)
-    ids = client.get_organizations_in_my_collaboration()
+    organizations = client.get_organizations_in_my_collaboration()
+    ids = [organization.get("id") for organization in organizations]
 
     # The input fot the algorithm is the same for all organizations
     # in this case  
@@ -88,4 +89,4 @@ def my_turn(token):
     
     # decode public part of the JWT (we do not have or need the secret)
     claims = jwt.decode(token, verify=False)
-    return {"result": claims.get("identity")}
+    return claims.get("identity")
