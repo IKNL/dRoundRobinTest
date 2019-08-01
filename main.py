@@ -23,7 +23,7 @@ from roundrobintest import master, my_turn, info, warn
 
 # read input from the mounted inputfile
 info("Reading input")
-with open("app/input.txt") as fp:
+with open(os.environ["INPUT_FILE"]) as fp:
     input_ = json.loads(fp.read())
 
 # determine function from input, summarize is used by default.
@@ -39,7 +39,7 @@ if not method:
 
 # both the master (central) and node algorithm require a token
 info("Reading token")
-with open("app/token.txt") as fp:
+with open(os.environ["TOKEN_FILE"]) as fp:
     token = fp.read().strip()
     
 # call the actual function
@@ -47,5 +47,5 @@ output = method(token)
 
 # write output to mounted output file
 info("Writing output")
-with open("app/output.txt", 'w') as fp:
+with open(os.environ["OUTPUT_FILE"], 'w') as fp:
     fp.write(json.dumps(output))

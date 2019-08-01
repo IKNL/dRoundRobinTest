@@ -10,7 +10,7 @@ COPY . /
 
 # install pytaskmanageexitr
 WORKDIR /ppdli
-RUN git clone -b DEV https://github.com/IKNL/ppDLI.git .
+RUN git clone -b E2EE https://github.com/IKNL/ppDLI.git .
 RUN pip install .
 
 

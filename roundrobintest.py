@@ -3,8 +3,9 @@ import sys
 import time
 import json
 import jwt
+import requests
 
-from pytaskmanager.node.FlaskIO import ClientContainerProtocol
+from pytaskmanager.node.server_io import ClientContainerProtocol
 
 # loggers
 info = lambda msg: sys.stdout.write("info > "+msg+"\n")
@@ -22,7 +23,8 @@ def master(token):
 
     # post task to all nodes in collaboration, the environment variables
     # are set by the node instance
-    info("Setup server communication client")
+    info("Setup (proxy)server communication client")
+
     client = ClientContainerProtocol(
         token=token, 
         host=os.environ["HOST"],
