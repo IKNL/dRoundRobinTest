@@ -5,7 +5,7 @@ import json
 import jwt
 import requests
 
-from pytaskmanager.node.server_io import ClientContainerProtocol
+from joey.node.server_io import ClientContainerProtocol
 
 # loggers
 info = lambda msg: sys.stdout.write("info > "+msg+"\n")
